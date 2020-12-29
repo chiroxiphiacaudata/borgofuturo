@@ -1,0 +1,1019 @@
+{
+  "type": "FeatureCollection",
+  "name": "sept-2019-VALLENZUOLO",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [{
+      "type": "Feature",
+      "properties": {
+        "Submitted by": "32",
+        "Submitted at": "BorgoFuturo",
+        "ID": "Tl17",
+        "point": "Flash",
+        "feelings": "Flash",
+        "sense": "vista",
+        "picture": "https:\/\/odk.comunidados.org\/v1\/projects\/2\/forms\/build_PASSEGGIATA-Ripe-San-Ginesio-Colmurano_1562254294\/submissions\/uuid%3A6a60cff9-2a78-4545-baa9-1b17e62288dc\/attachments\/1562273235156.jpg",
+        "latitude": 13.3563388,
+        "longitude": 43.1635137,
+        "Instance ID": "6a60cff9-2a78-4545-baa9-1b17e62288dc",
+        "class": "colore"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [13.3563388, 43.1635137]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Submitted by": "31",
+        "Submitted at": "BorgoFuturo",
+        "ID": "Tl17",
+        "point": "Madunina",
+        "feelings": "Sguardo",
+        "sense": "vista",
+        "picture": "https:\/\/odk.comunidados.org\/v1\/projects\/2\/forms\/build_PASSEGGIATA-Ripe-San-Ginesio-Colmurano_1562254294\/submissions\/uuid%3A85611a14-0ea1-422d-bd40-55af61ad18cf\/attachments\/1562262803579.jpg",
+        "latitude": 13.361148,
+        "longitude": 43.1632525,
+        "Instance ID": "85611a14-0ea1-422d-bd40-55af61ad18cf",
+        "class": "monumento"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [13.361148, 43.1632525]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Submitted by": "30",
+        "Submitted at": "BorgoFuturo",
+        "ID": "Tl17",
+        "point": "Nodi",
+        "feelings": null,
+        "sense": "vista",
+        "picture": "https:\/\/odk.comunidados.org\/v1\/projects\/2\/forms\/build_PASSEGGIATA-Ripe-San-Ginesio-Colmurano_1562254294\/submissions\/uuid%3A078f75f9-efac-48d6-af87-88d0c2567161\/attachments\/1562262348849.jpg",
+        "latitude": 13.361852,
+        "longitude": 43.1608096,
+        "Instance ID": "078f75f9-efac-48d6-af87-88d0c2567161",
+        "class": "piante"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [13.361852, 43.1608096]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Submitted by": "29",
+        "Submitted at": "BorgoFuturo",
+        "ID": "Tl17",
+        "point": "Rosso",
+        "feelings": "Rosso",
+        "sense": "vista",
+        "picture": "https:\/\/odk.comunidados.org\/v1\/projects\/2\/forms\/build_PASSEGGIATA-Ripe-San-Ginesio-Colmurano_1562254294\/submissions\/uuid%3A945aa8c7-3207-4e1b-8ef9-dbe48c5ac988\/attachments\/1562262242997.jpg",
+        "latitude": 13.3623723,
+        "longitude": 43.1602588,
+        "Instance ID": "945aa8c7-3207-4e1b-8ef9-dbe48c5ac988",
+        "class": "colore"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [13.3623723, 43.1602588]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Submitted by": "28",
+        "Submitted at": "BorgoFuturo",
+        "ID": "Tl17",
+        "point": "Geometria",
+        "feelings": "Ripetizione",
+        "sense": "vista",
+        "picture": "https:\/\/odk.comunidados.org\/v1\/projects\/2\/forms\/build_PASSEGGIATA-Ripe-San-Ginesio-Colmurano_1562254294\/submissions\/uuid%3Adf9472f0-ebd3-4b4b-8dce-8b2fe7bd9db6\/attachments\/1562262107860.jpg",
+        "latitude": 13.3628114,
+        "longitude": 43.1597628,
+        "Instance ID": "df9472f0-ebd3-4b4b-8dce-8b2fe7bd9db6",
+        "class": "antropico"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [13.3628114, 43.1597628]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Submitted by": "27",
+        "Submitted at": "BorgoFuturo",
+        "ID": "Tl17",
+        "point": "Verde",
+        "feelings": "Verde",
+        "sense": "vista",
+        "picture": "https:\/\/odk.comunidados.org\/v1\/projects\/2\/forms\/build_PASSEGGIATA-Ripe-San-Ginesio-Colmurano_1562254294\/submissions\/uuid%3A3651ace9-1f27-4fb0-a2ec-2356019b54b6\/attachments\/1562261806188.jpg",
+        "latitude": 13.3650251,
+        "longitude": 43.1589917,
+        "Instance ID": "3651ace9-1f27-4fb0-a2ec-2356019b54b6",
+        "class": "colore"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [13.3650251, 43.1589917]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Submitted by": "26",
+        "Submitted at": "BorgoFuturo",
+        "ID": "Tl17",
+        "point": "Giallo",
+        "feelings": "Giallo",
+        "sense": "vista",
+        "picture": null,
+        "latitude": 13.3688144,
+        "longitude": 43.1545235,
+        "Instance ID": "6ea03e17-d5ab-4cf5-ab93-054b2372d34e",
+        "class": "colore"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [13.3688144, 43.1545235]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Submitted by": "24",
+        "Submitted at": "BorgoFuturo",
+        "ID": "VV00",
+        "point": "Party",
+        "feelings": "Party",
+        "sense": "udito vista olfatto gusto tatto",
+        "picture": "https:\/\/odk.comunidados.org\/v1\/projects\/2\/forms\/build_PASSEGGIATA-Ripe-San-Ginesio-Colmurano_1562254294\/submissions\/uuid%3Ac0e7483a-b9da-4bc5-863a-fb3a15773308\/attachments\/1562275135347.jpg",
+        "latitude": 13.3561481,
+        "longitude": 43.1636204,
+        "Instance ID": "c0e7483a-b9da-4bc5-863a-fb3a15773308",
+        "class": "attrazione"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [13.3561481, 43.1636204]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Submitted by": "23",
+        "Submitted at": "BorgoFuturo",
+        "ID": "VV00",
+        "point": "Calci in culo a pedali",
+        "feelings": "Entusiasmo",
+        "sense": "vista udito",
+        "picture": "https:\/\/odk.comunidados.org\/v1\/projects\/2\/forms\/build_PASSEGGIATA-Ripe-San-Ginesio-Colmurano_1562254294\/submissions\/uuid%3A9c672921-d238-49e5-a5a4-e614e169baf8\/attachments\/1562265552682.jpg",
+        "latitude": 13.3566698,
+        "longitude": 43.1634305,
+        "Instance ID": "9c672921-d238-49e5-a5a4-e614e169baf8",
+        "class": "attrazione"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [13.3566698, 43.1634305]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Submitted by": "22",
+        "Submitted at": "BorgoFuturo",
+        "ID": "VV00",
+        "point": "Forza Milan Juve merda",
+        "feelings": "Sorpresa",
+        "sense": "vista",
+        "picture": "https:\/\/odk.comunidados.org\/v1\/projects\/2\/forms\/build_PASSEGGIATA-Ripe-San-Ginesio-Colmurano_1562254294\/submissions\/uuid%3A4dfe1ba0-d63c-468c-8f07-3d507a366ae0\/attachments\/1562262222164.jpg",
+        "latitude": 13.3621981,
+        "longitude": 43.1603687,
+        "Instance ID": "4dfe1ba0-d63c-468c-8f07-3d507a366ae0",
+        "class": "antropico"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [13.3621981, 43.1603687]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Submitted by": "21",
+        "Submitted at": "BorgoFuturo",
+        "ID": "VV00",
+        "point": "Vigne giovani",
+        "feelings": "Sete",
+        "sense": "vista",
+        "picture": "https:\/\/odk.comunidados.org\/v1\/projects\/2\/forms\/build_PASSEGGIATA-Ripe-San-Ginesio-Colmurano_1562254294\/submissions\/uuid%3A7ae915a8-4490-4d1f-b12a-40a313090223\/attachments\/1562262027538.jpg",
+        "latitude": 13.3635274,
+        "longitude": 43.159501,
+        "Instance ID": "7ae915a8-4490-4d1f-b12a-40a313090223",
+        "class": "piante"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [13.3635274, 43.159501]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Submitted by": "20",
+        "Submitted at": "BorgoFuturo",
+        "ID": "VV00",
+        "point": "Mietitrebbia all orizzonte",
+        "feelings": "Fascino",
+        "sense": "vista",
+        "picture": "https:\/\/odk.comunidados.org\/v1\/projects\/2\/forms\/build_PASSEGGIATA-Ripe-San-Ginesio-Colmurano_1562254294\/submissions\/uuid%3A33807f93-a0cc-4887-9efe-157be86c515c\/attachments\/1562261653550.jpg",
+        "latitude": 13.3656206,
+        "longitude": 43.1585825,
+        "Instance ID": "33807f93-a0cc-4887-9efe-157be86c515c",
+        "class": "antropico"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [13.3656206, 43.1585825]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Submitted by": "19",
+        "Submitted at": "BorgoFuturo",
+        "ID": "VV00",
+        "point": "Bucato nel nulla",
+        "feelings": "Terminalia",
+        "sense": "vista",
+        "picture": "https:\/\/odk.comunidados.org\/v1\/projects\/2\/forms\/build_PASSEGGIATA-Ripe-San-Ginesio-Colmurano_1562254294\/submissions\/uuid%3Ad0efd233-c0c0-4945-80be-da85d18826f8\/attachments\/1562260912738.jpg",
+        "latitude": 13.3681521,
+        "longitude": 43.154977,
+        "Instance ID": "d0efd233-c0c0-4945-80be-da85d18826f8",
+        "class": "attrazione"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [13.3681521, 43.154977]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Submitted by": "18",
+        "Submitted at": "BorgoFuturo",
+        "ID": "VV00",
+        "point": "Casa della cuoca",
+        "feelings": "Fame",
+        "sense": "vista",
+        "picture": null,
+        "latitude": 13.3709456,
+        "longitude": 43.1528364,
+        "Instance ID": "19a4f3d5-acb3-487e-a892-2899f47c6c36",
+        "class": "antropico"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [13.3709456, 43.1528364]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Submitted by": "17",
+        "Submitted at": "BorgoFuturo",
+        "ID": "ME31",
+        "point": "Piante",
+        "feelings": "Curiosità",
+        "sense": "vista olfatto tatto",
+        "picture": "https:\/\/odk.comunidados.org\/v1\/projects\/2\/forms\/build_PASSEGGIATA-Ripe-San-Ginesio-Colmurano_1562254294\/submissions\/uuid%3A2313250f-c84a-493f-9c38-e89b5067dd75\/attachments\/1562261366182.jpg",
+        "latitude": 13.3599146,
+        "longitude": 43.1633682,
+        "Instance ID": "2313250f-c84a-493f-9c38-e89b5067dd75",
+        "class": "piante"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [13.3599146, 43.1633682]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Submitted by": "16",
+        "Submitted at": "BorgoFuturo",
+        "ID": "ME31",
+        "point": "Rumore",
+        "feelings": "Fuori contesto",
+        "sense": "udito",
+        "picture": null,
+        "latitude": 13.3669846,
+        "longitude": 43.15676,
+        "Instance ID": "5041e9e8-c7b3-41bb-80b4-9e24ca434526",
+        "class": "antropico"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [13.3669846, 43.15676]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Submitted by": "15",
+        "Submitted at": "BorgoFuturo",
+        "ID": "ME31",
+        "point": "Colori",
+        "feelings": "Tranquillità",
+        "sense": "vista",
+        "picture": "https:\/\/odk.comunidados.org\/v1\/projects\/2\/forms\/build_PASSEGGIATA-Ripe-San-Ginesio-Colmurano_1562254294\/submissions\/uuid%3Af2db2690-858f-4bbe-9e3d-cb0d75a20067\/attachments\/1562259064413.jpg",
+        "latitude": 13.3688726,
+        "longitude": 43.154529,
+        "Instance ID": "f2db2690-858f-4bbe-9e3d-cb0d75a20067",
+        "class": "colore"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [13.3688726, 43.154529]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Submitted by": "14",
+        "Submitted at": "BorgoFuturo",
+        "ID": "ME31",
+        "point": "Casa che spunta dal grano",
+        "feelings": "Sorpresa",
+        "sense": "vista",
+        "picture": "https:\/\/odk.comunidados.org\/v1\/projects\/2\/forms\/build_PASSEGGIATA-Ripe-San-Ginesio-Colmurano_1562254294\/submissions\/uuid%3Ad19354e2-fffa-4aac-912f-3b46bf101d6d\/attachments\/1562258187319.jpg",
+        "latitude": 13.3700714,
+        "longitude": 43.1469708,
+        "Instance ID": "d19354e2-fffa-4aac-912f-3b46bf101d6d",
+        "class": "antropico"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [13.3700714, 43.1469708]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Submitted by": "13",
+        "Submitted at": "BorgoFuturo",
+        "ID": "MT30",
+        "point": "alberi",
+        "feelings": "sorpresa",
+        "sense": "vista",
+        "picture": "https:\/\/odk.comunidados.org\/v1\/projects\/2\/forms\/build_PASSEGGIATA-Ripe-San-Ginesio-Colmurano_1562254294\/submissions\/uuid%3A2bb00e5c-1ef4-48cb-a3c8-16f1abd5f8de\/attachments\/1562261683275.jpg",
+        "latitude": null,
+        "longitude": null,
+        "Instance ID": "2bb00e5c-1ef4-48cb-a3c8-16f1abd5f8de",
+        "class": "piante"
+      },
+      "geometry": null
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Submitted by": "12",
+        "Submitted at": "BorgoFuturo",
+        "ID": "MR30",
+        "point": "fonte",
+        "feelings": "ricordi",
+        "sense": "udito tatto",
+        "picture": "https:\/\/odk.comunidados.org\/v1\/projects\/2\/forms\/build_PASSEGGIATA-Ripe-San-Ginesio-Colmurano_1562254294\/submissions\/uuid%3A849d75ce-87c2-45d9-89eb-7f91d0344018\/attachments\/1562261099003.jpg",
+        "latitude": 13.361013,
+        "longitude": 43.1631152,
+        "Instance ID": "849d75ce-87c2-45d9-89eb-7f91d0344018",
+        "class": "acqua"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [13.361013, 43.1631152]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Submitted by": "11",
+        "Submitted at": "BorgoFuturo",
+        "ID": "MT30",
+        "point": "paesaggio",
+        "feelings": "sorpresa",
+        "sense": "vista",
+        "picture": "https:\/\/odk.comunidados.org\/v1\/projects\/2\/forms\/build_PASSEGGIATA-Ripe-San-Ginesio-Colmurano_1562254294\/submissions\/uuid%3A697abac1-b2fe-482a-8f51-70dbb797e2e8\/attachments\/1562260621782.jpg",
+        "latitude": 13.3614084,
+        "longitude": 43.161647,
+        "Instance ID": "697abac1-b2fe-482a-8f51-70dbb797e2e8",
+        "class": "collinare"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [13.3614084, 43.161647]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Submitted by": "10",
+        "Submitted at": "BorgoFuturo",
+        "ID": "MT30",
+        "point": "Alberi",
+        "feelings": "Gioia",
+        "sense": "vista",
+        "picture": "https:\/\/odk.comunidados.org\/v1\/projects\/2\/forms\/build_PASSEGGIATA-Ripe-San-Ginesio-Colmurano_1562254294\/submissions\/uuid%3Ac6919dc2-25f4-459c-9969-1b33a0b5e3a0\/attachments\/1562259660065.jpg",
+        "latitude": null,
+        "longitude": null,
+        "Instance ID": "c6919dc2-25f4-459c-9969-1b33a0b5e3a0",
+        "class": "piante"
+      },
+      "geometry": null
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Submitted by": "9",
+        "Submitted at": "BorgoFuturo",
+        "ID": "DB26",
+        "point": "Lavatoio",
+        "feelings": "Freschezza. familiarità",
+        "sense": "vista udito",
+        "picture": "https:\/\/odk.comunidados.org\/v1\/projects\/2\/forms\/build_PASSEGGIATA-Ripe-San-Ginesio-Colmurano_1562254294\/submissions\/uuid%3A305e5f5d-94b9-44d6-828a-d10ea1bf3113\/attachments\/1562260145549.jpg",
+        "latitude": 13.3610748,
+        "longitude": 43.1631563,
+        "Instance ID": "305e5f5d-94b9-44d6-828a-d10ea1bf3113",
+        "class": "antropico"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [13.3610748, 43.1631563]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Submitted by": "8",
+        "Submitted at": "BorgoFuturo",
+        "ID": "DB26",
+        "point": "Sole sulla vigna",
+        "feelings": "Spettacolo",
+        "sense": "vista",
+        "picture": "https:\/\/odk.comunidados.org\/v1\/projects\/2\/forms\/build_PASSEGGIATA-Ripe-San-Ginesio-Colmurano_1562254294\/submissions\/uuid%3A4baf3e69-548d-4690-a78e-24c00092a006\/attachments\/1562259484205.jpg",
+        "latitude": null,
+        "longitude": null,
+        "Instance ID": "4baf3e69-548d-4690-a78e-24c00092a006",
+        "class": "collinare"
+      },
+      "geometry": null
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Submitted by": "7",
+        "Submitted at": "BorgoFuturo",
+        "ID": "DB26",
+        "point": "Torrente",
+        "feelings": "Familiarità",
+        "sense": "vista olfatto",
+        "picture": "https:\/\/odk.comunidados.org\/v1\/projects\/2\/forms\/build_PASSEGGIATA-Ripe-San-Ginesio-Colmurano_1562254294\/submissions\/uuid%3A53ac0663-434f-4121-a4a7-e1c9284f9f65\/attachments\/1562258939679.jpg",
+        "latitude": 13.3648891,
+        "longitude": 43.1591706,
+        "Instance ID": "53ac0663-434f-4121-a4a7-e1c9284f9f65",
+        "class": "acqua"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [13.3648891, 43.1591706]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Submitted by": "6",
+        "Submitted at": "BorgoFuturo",
+        "ID": "MG4",
+        "point": "Forno",
+        "feelings": "Tristezza",
+        "sense": "vista",
+        "picture": "https:\/\/odk.comunidados.org\/v1\/projects\/2\/forms\/build_PASSEGGIATA-Ripe-San-Ginesio-Colmurano_1562254294\/submissions\/uuid%3A6b40cb67-b661-43c7-8dbf-eac7faab6bd9\/attachments\/1562259393277.jpg",
+        "latitude": 13.3640827,
+        "longitude": 43.1592912,
+        "Instance ID": "6b40cb67-b661-43c7-8dbf-eac7faab6bd9",
+        "class": "antropico"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [13.3640827, 43.1592912]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Submitted by": "5",
+        "Submitted at": "BorgoFuturo",
+        "ID": "Lr7",
+        "point": "Macerie",
+        "feelings": "Melanconia",
+        "sense": "vista",
+        "picture": "https:\/\/odk.comunidados.org\/v1\/projects\/2\/forms\/build_PASSEGGIATA-Ripe-San-Ginesio-Colmurano_1562254294\/submissions\/uuid%3A962cf997-04ff-4199-ba88-4fe5a7b40bcc\/attachments\/1562260181247.jpg",
+        "latitude": 13.3709118,
+        "longitude": 43.1493837,
+        "Instance ID": "962cf997-04ff-4199-ba88-4fe5a7b40bcc",
+        "class": "antropico"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [13.3709118, 43.1493837]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Submitted by": "4",
+        "Submitted at": "BorgoFuturo",
+        "ID": "Lr7",
+        "point": "Colline",
+        "feelings": "Tranquillità",
+        "sense": "vista",
+        "picture": "https:\/\/odk.comunidados.org\/v1\/projects\/2\/forms\/build_PASSEGGIATA-Ripe-San-Ginesio-Colmurano_1562254294\/submissions\/uuid%3A5a9a0027-83fc-451f-a16f-42ea774a3e86\/attachments\/1562260431517.jpg",
+        "latitude": 13.3711645,
+        "longitude": 43.1519779,
+        "Instance ID": "5a9a0027-83fc-451f-a16f-42ea774a3e86",
+        "class": "collinare"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [13.3711645, 43.1519779]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Submitted by": "3",
+        "Submitted at": "BorgoFuturo",
+        "ID": "Lr7",
+        "point": "Colline",
+        "feelings": "Tranquillità",
+        "sense": "vista",
+        "picture": null,
+        "latitude": 13.3706311,
+        "longitude": 43.1486834,
+        "Instance ID": "43cc39e5-dc58-48da-bd08-229c54bb369d",
+        "class": "collinare"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [13.3706311, 43.1486834]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Submitted by": "2",
+        "Submitted at": "BorgoFuturo",
+        "ID": "LC23",
+        "point": "I colori",
+        "feelings": "Rilassatezza",
+        "sense": "vista udito olfatto",
+        "picture": "https:\/\/odk.comunidados.org\/v1\/projects\/2\/forms\/build_PASSEGGIATA-Ripe-San-Ginesio-Colmurano_1562254294\/submissions\/uuid%3A58942ffb-4af1-4627-aaee-cb0266c0b0b7\/attachments\/1562259065246.jpg",
+        "latitude": null,
+        "longitude": null,
+        "Instance ID": "58942ffb-4af1-4627-aaee-cb0266c0b0b7",
+        "class": "colore"
+      },
+      "geometry": null
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Submitted by": "1",
+        "Submitted at": "BorgoFuturo",
+        "ID": "MG4",
+        "point": "Attrezzi da contadino appesi ad un cancello",
+        "feelings": "Nostalgia",
+        "sense": "vista",
+        "picture": null,
+        "latitude": 13.3710554,
+        "longitude": 43.1527657,
+        "Instance ID": "d20bd91f-8089-4f6c-9884-d4c049127dc6",
+        "class": "antropico"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [13.3710554, 43.1527657]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Submitted by": "A1",
+        "Submitted at": null,
+        "ID": "BX32",
+        "point": "Mietitura campi dorati",
+        "feelings": "Gioia familiarità pace tranquillità",
+        "sense": "vista",
+        "picture": null,
+        "latitude": 13.3669845,
+        "longitude": 43.15676,
+        "Instance ID": null,
+        "class": "collinare"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [13.3669845, 43.15676]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Submitted by": "A2",
+        "Submitted at": "BorgoFuturo",
+        "ID": "WH29",
+        "point": "View smell light",
+        "feelings": "Serenity peaceful joy",
+        "sense": "vista olfatto",
+        "picture": null,
+        "latitude": 13.368871,
+        "longitude": 43.154447,
+        "Instance ID": null,
+        "class": "collinare"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [13.368871, 43.154447]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Submitted by": "A3",
+        "Submitted at": "BorgoFuturo",
+        "ID": "WH29",
+        "point": "Look like a painting on the light with the blue sky and the yellow fields",
+        "feelings": "Dreamy",
+        "sense": "vista",
+        "picture": null,
+        "latitude": 13.3681,
+        "longitude": 43.155243,
+        "Instance ID": null,
+        "class": "collinare"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [13.3681, 43.155243]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Submitted by": "A4",
+        "Submitted at": "BorgoFuturo",
+        "ID": "WH29",
+        "point": "The smell all around",
+        "feelings": "Childhood memories",
+        "sense": "olfatto",
+        "picture": null,
+        "latitude": 13.366598,
+        "longitude": 43.157962,
+        "Instance ID": null,
+        "class": "piante"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [13.366598, 43.157962]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Submitted by": "A5",
+        "Submitted at": "BorgoFuturo",
+        "ID": "IM31",
+        "point": "Collina verde",
+        "feelings": "Pace",
+        "sense": "vista",
+        "picture": null,
+        "latitude": 13.369231,
+        "longitude": 43.153941,
+        "Instance ID": null,
+        "class": "collinare"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [13.369231, 43.153941]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Submitted by": "A6",
+        "Submitted at": "BorgoFuturo",
+        "ID": "IM31",
+        "point": "Fienile cani galline",
+        "feelings": "Gioia",
+        "sense": "vista",
+        "picture": null,
+        "latitude": 13.362227,
+        "longitude": 43.159795,
+        "Instance ID": null,
+        "class": "antropico"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [13.362227, 43.159795]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Submitted by": "A7",
+        "Submitted at": "BorgoFuturo",
+        "ID": "IM31",
+        "point": "Lavandaie",
+        "feelings": "Serenità",
+        "sense": "vista",
+        "picture": null,
+        "latitude": 13.361073,
+        "longitude": 43.163119,
+        "Instance ID": null,
+        "class": "antropico"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [13.361073, 43.163119]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Submitted by": "A8",
+        "Submitted at": "BorgoFuturo",
+        "ID": "IS36",
+        "point": "Small building",
+        "feelings": "Loneliness",
+        "sense": "vista",
+        "picture": null,
+        "latitude": 13.364263,
+        "longitude": 43.152551,
+        "Instance ID": null,
+        "class": "antropico"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [13.364263, 43.152551]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Submitted by": "A9",
+        "Submitted at": "BorgoFuturo",
+        "ID": "IS36",
+        "point": "Hazelnut tree",
+        "feelings": "Happy",
+        "sense": "vista",
+        "picture": null,
+        "latitude": 13.361997,
+        "longitude": 43.161746,
+        "Instance ID": null,
+        "class": "piante"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [13.361997, 43.161746]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Submitted by": "A10",
+        "Submitted at": "BorgoFuturo",
+        "ID": "BR28",
+        "point": "Quei fiori strani rotondi secchi bianchicci",
+        "feelings": "Amazement",
+        "sense": "vista",
+        "picture": null,
+        "latitude": 13.358447,
+        "longitude": 43.163191,
+        "Instance ID": null,
+        "class": "piante"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [13.358447, 43.163191]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Submitted by": "A11",
+        "Submitted at": "BorgoFuturo",
+        "ID": "BR28",
+        "point": "Channel",
+        "feelings": "Freshness",
+        "sense": "tatto",
+        "picture": null,
+        "latitude": 13.364517,
+        "longitude": 43.15915,
+        "Instance ID": null,
+        "class": "acqua"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [13.364517, 43.15915]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Submitted by": "A12",
+        "Submitted at": "BorgoFuturo",
+        "ID": "ME27",
+        "point": "Rudere",
+        "feelings": "Emotional",
+        "sense": "vista",
+        "picture": null,
+        "latitude": 13.367337,
+        "longitude": 43.156578,
+        "Instance ID": null,
+        "class": "antropico"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [13.367337, 43.156578]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Submitted by": "A13",
+        "Submitted at": "BorgoFuturo",
+        "ID": "ME27",
+        "point": "Vigna",
+        "feelings": null,
+        "sense": "vista",
+        "picture": null,
+        "latitude": 13.365304,
+        "longitude": 43.159005,
+        "Instance ID": null,
+        "class": "piante"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [13.365304, 43.159005]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Submitted by": "A14",
+        "Submitted at": "BorgoFuturo",
+        "ID": "MO31",
+        "point": "Case pericolanti cani e fienili",
+        "feelings": "Interetto",
+        "sense": "vista udito",
+        "picture": null,
+        "latitude": 13.362614,
+        "longitude": 43.160163,
+        "Instance ID": null,
+        "class": "antropico"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [13.362614, 43.160163]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Submitted by": "A15",
+        "Submitted at": "BorgoFuturo",
+        "ID": "MO31",
+        "point": "Lavandaie",
+        "feelings": "Calma",
+        "sense": "vista udito olfatto tatto gusto",
+        "picture": null,
+        "latitude": 13.361073,
+        "longitude": 43.163119,
+        "Instance ID": null,
+        "class": "antropico"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [13.361073, 43.163119]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Submitted by": "A16",
+        "Submitted at": "BorgoFuturo",
+        "ID": "AB28",
+        "point": "Crepa nell'asfalto",
+        "feelings": "Precarietà",
+        "sense": "vista tatto",
+        "picture": null,
+        "latitude": 13.370508,
+        "longitude": 43.147482,
+        "Instance ID": null,
+        "class": "antropico"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [13.370508, 43.147482]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Submitted by": "A17",
+        "Submitted at": "BorgoFuturo",
+        "ID": "AB28",
+        "point": "Bivio",
+        "feelings": "Luminosa distesa calma",
+        "sense": "vista",
+        "picture": null,
+        "latitude": 13.369599,
+        "longitude": 43.154158,
+        "Instance ID": null,
+        "class": "collinare"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [13.369599, 43.154158]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Submitted by": "A18",
+        "Submitted at": "BorgoFuturo",
+        "ID": "IT33",
+        "point": "Contrasto tra giallo prati falciati e il verde delle colline",
+        "feelings": "Malinconica sorpresa affranta",
+        "sense": "vista udito tatto",
+        "picture": null,
+        "latitude": 13.368872,
+        "longitude": 43.154529,
+        "Instance ID": null,
+        "class": "collinare"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [13.368872, 43.154529]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Submitted by": "A19",
+        "Submitted at": "BorgoFuturo",
+        "ID": "IT33",
+        "point": "Colori delle pietre di cormurano al crepuscolo",
+        "feelings": null,
+        "sense": null,
+        "picture": null,
+        "latitude": 13.366855,
+        "longitude": 43.157011,
+        "Instance ID": null,
+        "class": "colore"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [13.366855, 43.157011]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Submitted by": "A20",
+        "Submitted at": "BorgoFuturo",
+        "ID": "AN37",
+        "point": "Rumore della mietitreebbia",
+        "feelings": "Deja-vu",
+        "sense": "udito",
+        "picture": null,
+        "latitude": 13.366984,
+        "longitude": 43.15676,
+        "Instance ID": null,
+        "class": "antropico"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [13.366984, 43.15676]
+      }
+    }
+  ]
+}
