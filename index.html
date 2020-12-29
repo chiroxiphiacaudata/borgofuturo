@@ -1,0 +1,503 @@
+<html>
+
+<head>
+  <meta charset='utf-8' />
+  <title>RIPE SAN GINESIO - COLMURANO</title>
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.0/mapbox-gl.js'></script>
+  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.0/mapbox-gl.css' rel='stylesheet' />
+  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/vast-engineering/jquery-popup-overlay@2/jquery.popupoverlay.min.js"></script>
+  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+  <link rel="stylesheet" type="text/css" href="./style/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+  <link href="https://api.mapbox.com/mapbox-assembly/v0.23.2/assembly.min.css" rel="stylesheet">
+  <script async defer src="https://api.mapbox.com/mapbox-assembly/v0.23.2/assembly.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+
+</head>
+
+<body>
+
+
+  <div id='map'></div>
+  <pre id='info'></pre>
+
+  <div class="legend box-legend">
+    <div id="box-info">
+      <div id="title"><strong>VALLENZUOLO VALLEY</strong></div>
+      <div id="subtitle"><strong>PARTECIPATORY MAPPING OF ECOSYSTEM SERVICES</strong></div>
+    </div>
+    <span id="description">****</br>This map is the result of a mapping walk across the rural landscape connecting the towns of Ripe San Ginesio and Colmurano (MC), Italy, carried out during the festival Borgofuturo 2019. </br>The project adopted a bottom up approach encompassing the whole procedure, from the selection of the Cultural Ecosystem Services (CES) to be analyzed to the actual process of valuation. Along the walk, the use of an open source app, OpenDataKit Collect, allowed the participants to map their perceptions of the surrounding landscapes, resulting in the displayed distribution of points in the map.</br>This exercise proved useful in assessing the plurality and diversity of individual interactions that can be experienced in a rural environment and represent a first attempt to include CES perceived by landscape users in the planning agenda of rural municipalities.</span>
+    <div id="box-loghi">
+      <span id="comunidados"><a href="http://www.comunidados.org"><img src="./media/logo-comunidados.png"></img></a></span>
+      <span id="borgofuturo"><a href="http://www.borgofuturo.net"><img src="./media/logo-bf.png"></img></a></span>
+      <span id="terminalia"><a href="https://www.instagram.com/terminalia.cantierinomadi/"><img src="./media/logo-terminalia.png"></img></a></span>
+    </div>
+  </div>
+
+
+  <div id='base-legend' class="legend base-legend">
+    <strong style="bottom:4px;">Base map - Vallenzuolo valley</strong>
+    <div class="legend-base"><span style='background:#abbda8;'></span>Agricolture</div>
+    <div class="legend-base"><span style='background:#5d8754;'></span>Woodland</div>
+    <div class="legend-base"><span style='background:rgba(247, 169, 24, 0.38);'></span>Village</div>
+    <div class="legend-base"><span style='background:#9c81ee;'></span>Water</div>
+    <div class="legend-base"><span style='background:#f1eef6;border:1px solid #8b8b8b;'></span>Industrial</div>
+    </br><strong>data sources: Regione Marche, Provincia di Macerata, OSM</strong>
+  </div>
+
+
+  <div id='marker-legend' class="legend">
+  <strong>Landscape elements</strong></br></br>
+    <div class="legend-elem"><span class="anthropic-legend" style='border:2px solid rgba(105, 104, 64, 0.5);'></span>Anthropic</div>
+    <div class="legend-elem"><span class="attraction-legend" style='border:2px solid rgba(229, 94, 94, 0.5);'></span>Attraction</div>
+    <div class="legend-elem"><span class="color-legend" style='border:2px solid rgba(81, 16, 80, 0.5);'></span>Color</div>
+    <div class="legend-elem"><span class="hill-legend" style= 'border:2px solid rgba(251, 176, 59, 0.5);'></span>Hill</div>
+    <!--<div class="legend-elem"><span class="monument-legend" style='border:2px solid rgba(255, 250, 170, 0.5);'></span>Monument</div>-->
+    <div class="legend-elem"><span class="tree-legend" style='border:2px solid rgba(81, 209, 80, 0.5);'></span>Tree</div>
+    <div class="legend-elem"><span class="water-legend" style='border:2px solid rgba(59, 178, 208, 0.5);'></span>Water</div>
+  </div>
+
+
+
+  <script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoiY29tdW5pLWRhZG9zIiwiYSI6ImNqdWxlaHRqbjIycjE0M3BpamY3a3c4aWUifQ.HGizp_QckKQVjAZnnw8qAg';
+
+    var bounds = [
+      [13.33665153, 43.130119145], // Southwest coordinates
+      [13.38832190, 43.16567947] // Northeast coordinates
+    ];
+
+    var map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/comuni-dados/cjxk9fmb71b481co8cn2tzx7f',
+      center: [13.361480, 43.158762],
+      zoom: 15,
+      //minZoom: 5,
+      //maxZoom: 22,
+      maxBounds: bounds // Sets bounds as max
+    });
+
+
+    map.on('load', function() {
+
+      map.addSource('vallenzuolo', {
+        type: 'geojson',
+        data: "sept-2019-VALLENZUOLO-briefcase.geojson",
+        buffer: 0,
+        maxzoom: 12
+      });
+
+      map.addSource('terminalia', {
+        type: 'geojson',
+        data: "terminalia.geojson",
+        buffer: 0,
+        maxzoom: 12
+      });
+
+      map.addSource('ripe-colmurano', {
+        type: 'geojson',
+        data: "ripe-colmurano.geojson",
+        buffer: 0,
+        maxzoom: 12
+      });
+
+
+      var legend = document.getElementById('legend');
+      var box = document.getElementById('box');
+
+      ///////PRINT COORDINATES//////
+
+      map.on('mousemove', function(e) {
+        document.getElementById('info').innerHTML =
+          // e.lngLat is the longitude, latitude geographical position of the event
+          JSON.stringify(e.lngLat.wrap());
+      });
+
+      ///////NAVIGATION CONTROL//////
+
+      var nav = new mapboxgl.NavigationControl();
+      map.addControl(nav, 'top-left');
+
+
+      ///////LAYERS//////
+
+      map.addLayer({
+        'id': 'elementi-paesaggio',
+        'type': 'circle',
+        'source': 'vallenzuolo',
+        'layout': {
+          'visibility': 'visible',
+        },
+        'paint': {
+          'circle-radius': {
+            'base': 1.75,
+            'stops': [
+              [12, 2],
+              [16, 40],
+              [22, 80]
+            ]
+          },
+          'circle-opacity': 0,
+          'circle-stroke-width': 6,
+          'circle-stroke-opacity': 0.6,
+          'circle-stroke-color': [
+            'match',
+            ['get', 'class'],
+            'Color', '#511050',
+            'Tree', '#51d150',
+            'Water', '#3bb2d0',
+            'Anthropic', '#696840',
+            'Attraction', '#e55e5e',
+            'Hill', '#fbb03b',
+            'Monument', '#fffaaa',
+            /* other */
+            '#000'
+          ]
+        }
+      });
+
+      map.addLayer({
+        'id': 'terminalia',
+        'type': 'circle',
+        'source': 'terminalia',
+        'layout': {
+          'visibility': 'visible',
+        },
+        'paint': {
+          'circle-radius': 25,
+          'circle-opacity': 0.5,
+          'circle-color': '#ffffff',
+          "circle-stroke-color": "red",
+          "circle-stroke-width": 2
+        }
+      });
+
+      map.addLayer({
+        'id': 'ripe-colmurano',
+        'type': 'symbol',
+        'source': 'ripe-colmurano',
+        'layout': {
+          "text-field": ["get", "point"],
+          "text-font": ["Open Sans Bold"],
+          "text-justify": "center",
+          "icon-image": ["concat", ["get", "icon"], "-15"]
+        },
+
+      });
+
+
+      ///////GEOJSON//////
+
+var color = {"type": "FeatureCollection",
+"name": "sept-2019-VALLENZUOLO-briefcase",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "meta-instanceID": "uuid:6ea03e17-d5ab-4cf5-ab93-054b2372d34e", "ID": "T17", "point": "Yellow", "feelings": "Yellow", "sense": "Sight ", "class": "Color", "picture": "1562260721298.jpg", "location-Latitude": 43.15452349, "location-Longitude": 13.36881441, "location-Altitude": 370.12994384770002, "location-Accuracy": 4.288 }, "geometry": { "type": "Point", "coordinates": [ 13.36881441, 43.15452349 ] } },
+{ "type": "Feature", "properties": { "meta-instanceID": "uuid:945aa8c7-3207-4e1b-8ef9-dbe48c5ac988", "ID": "T17", "point": "Red", "feelings": "Red", "sense": "Sight ", "class": "Color", "picture": "1562262242997.jpg", "location-Latitude": 43.16025876, "location-Longitude": 13.3623723, "location-Altitude": 370.37158203130002, "location-Accuracy": 3.216 }, "geometry": { "type": "Point", "coordinates": [ 13.3623723, 43.16025876 ] } },
+{ "type": "Feature", "properties": { "meta-instanceID": "uuid:f2db2690-858f-4bbe-9e3d-cb0d75a20067", "ID": "ME31", "point": "Colors", "feelings": "Peacefulness", "sense": "Sight ", "class": "Color", "picture": "1562259064413.jpg", "location-Latitude": 43.154529035099998, "location-Longitude": 13.368872556199999, "location-Altitude": 374.2113647461, "location-Accuracy": 4.9 }, "geometry": { "type": "Point", "coordinates": [ 13.368872556199999, 43.154529035099998 ] } },
+{ "type": "Feature", "properties": { "meta-instanceID": "uuid:6a60cff9-2a78-4545-baa9-1b17e62288dc", "ID": "T17", "point": "Flash", "feelings": "Flash", "sense": "Sight ", "class": "Color", "picture": "1562273235156.jpg", "location-Latitude": 43.1635137, "location-Longitude": 13.3563388, "location-Altitude": 467.65588378910002, "location-Accuracy": 4.288 }, "geometry": { "type": "Point", "coordinates": [ 13.3563388, 43.1635137 ] } },
+{ "type": "Feature", "properties": { "meta-instanceID": "uuid:3651ace9-1f27-4fb0-a2ec-2356019b54b6", "ID": "T17", "point": "Green", "feelings": "Green ", "sense": "Sight ", "class": "Color", "picture": "1562261806188.jpg", "location-Latitude": 43.15899171, "location-Longitude": 13.36502512, "location-Altitude": 318.02276611330001, "location-Accuracy": 3.216 }, "geometry": { "type": "Point", "coordinates": [ 13.36502512, 43.15899171 ] } },
+{ "type": "Feature", "properties": { "meta-instanceID": null, "ID": "IT33", "point": "Colours of the stones of Cormurano at dusk", "feelings": null, "sense": null, "class": "Color", "picture": "null.jpg", "location-Latitude": 43.157011, "location-Longitude": 13.366855, "location-Altitude": null, "location-Accuracy": null }, "geometry": { "type": "Point", "coordinates": [ 13.366855, 43.157011 ] } },
+]
+};
+
+
+var anthropic = {
+"type": "FeatureCollection",
+"name": "sept-2019-VALLENZUOLO-briefcase",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+  { "type": "Feature", "properties": { "meta-instanceID": "uuid:6b40cb67-b661-43c7-8dbf-eac7faab6bd9", "ID": "MG4", "point": "Oven", "feelings": "Sadness", "sense": "Sight ", "class": "Anthropic", "picture": "1562259393277.jpg", "location-Latitude": 43.15929124, "location-Longitude": 13.3640827, "location-Altitude": 317.75701904300001, "location-Accuracy": 4.288 }, "geometry": { "type": "Point", "coordinates": [ 13.3640827, 43.15929124 ] } },
+  { "type": "Feature", "properties": { "meta-instanceID": "uuid:df9472f0-ebd3-4b4b-8dce-8b2fe7bd9db6", "ID": "T17", "point": "Geometry", "feelings": "Repetition", "sense": "Sight ", "class": "Anthropic", "picture": "1562262107860.jpg", "location-Latitude": 43.15976275, "location-Longitude": 13.3628114, "location-Altitude": 354.68823242190001, "location-Accuracy": 4.288 }, "geometry": { "type": "Point", "coordinates": [ 13.3628114, 43.15976275 ] } },
+  { "type": "Feature", "properties": { "meta-instanceID": "uuid:4dfe1ba0-d63c-468c-8f07-3d507a366ae0", "ID": "Vitto e alloggio", "point": "Forza Milan Juve merda", "feelings": "Surprise", "sense": "Sight ", "class": "Anthropic", "picture": "1562262222164.jpg", "location-Latitude": 43.160368657500001, "location-Longitude": 13.3621980541, "location-Altitude": 373.33016967769998, "location-Accuracy": 4.7 }, "geometry": { "type": "Point", "coordinates": [ 13.3621980541, 43.160368657500001 ] } },
+  { "type": "Feature", "properties": { "meta-instanceID": "uuid:5041e9e8-c7b3-41bb-80b4-9e24ca434526", "ID": "ME31", "point": "Noise", "feelings": "Out of context", "sense": "Hearing", "class": "Anthropic", "picture": "null.jpg", "location-Latitude": 43.1567600435, "location-Longitude": 13.366984568099999, "location-Altitude": 345.50415039059999, "location-Accuracy": 4.9 }, "geometry": { "type": "Point", "coordinates": [ 13.366984568099999, 43.1567600435 ] } },
+  { "type": "Feature", "properties": { "meta-instanceID": "uuid:19a4f3d5-acb3-487e-a892-2899f47c6c36", "ID": "Vitto e alloggio", "point": "House of the chef", "feelings": "Hunger", "sense": "Sight ", "class": "Anthropic", "picture": "null.jpg", "location-Latitude": 43.152836398200002, "location-Longitude": 13.3709456181, "location-Altitude": 419.96267700200002, "location-Accuracy": 4.9 }, "geometry": { "type": "Point", "coordinates": [ 13.3709456181, 43.152836398200002 ] } },
+  { "type": "Feature", "properties": { "meta-instanceID": null, "ID": "IM31", "point": "Barn dogs chickens", "feelings": "Happiness", "sense": "Sight ", "class": "Anthropic", "picture": "null.jpg", "location-Latitude": 43.159795, "location-Longitude": 13.362227, "location-Altitude": null, "location-Accuracy": null }, "geometry": { "type": "Point", "coordinates": [ 13.362227, 43.159795 ] } },
+  { "type": "Feature", "properties": { "meta-instanceID": null, "ID": "IM31", "point": "Wash house", "feelings": "Serenity", "sense": "Sight ", "class": "Anthropic", "picture": "null.jpg", "location-Latitude": 43.163119, "location-Longitude": 13.361073, "location-Altitude": null, "location-Accuracy": null }, "geometry": { "type": "Point", "coordinates": [ 13.361073, 43.163119 ] } },
+  { "type": "Feature", "properties": { "meta-instanceID": null, "ID": "IS36", "point": "Small building", "feelings": "Loneliness", "sense": "Sight ", "class": "Anthropic", "picture": "null.jpg", "location-Latitude": 43.152551, "location-Longitude": 13.364263, "location-Altitude": null, "location-Accuracy": null }, "geometry": { "type": "Point", "coordinates": [ 13.367984928025704, 43.155361018351243 ] } },
+  { "type": "Feature", "properties": { "meta-instanceID": null, "ID": "MO31", "point": "Detached houses, dogs and barns", "feelings": "Disoriented", "sense": "Sight \/ Hearing", "class": "Anthropic", "picture": "null.jpg", "location-Latitude": 43.160163, "location-Longitude": 13.362614, "location-Altitude": null, "location-Accuracy": null }, "geometry": { "type": "Point", "coordinates": [ 13.362614, 43.160163 ] } },
+  { "type": "Feature", "properties": { "meta-instanceID": null, "ID": "AB28", "point": "Cracks in the asphalt", "feelings": "Insecurity", "sense": "Sight \/ Touch", "class": "Anthropic", "picture": "null.jpg", "location-Latitude": 43.147482, "location-Longitude": 13.370508, "location-Altitude": null, "location-Accuracy": null }, "geometry": { "type": "Point", "coordinates": [ 13.370508, 43.147482 ] } },
+  { "type": "Feature", "properties": { "meta-instanceID": null, "ID": "AN37", "point": "Foghorn noise", "feelings": "Deja-vu", "sense": "Hearing", "class": "Anthropic", "picture": "null.jpg", "location-Latitude": 43.15676, "location-Longitude": 13.366984, "location-Altitude": null, "location-Accuracy": null }, "geometry": { "type": "Point", "coordinates": [ 13.366984, 43.15676 ] } },
+  { "type": "Feature", "properties": { "meta-instanceID": "uuid:85611a14-0ea1-422d-bd40-55af61ad18cf", "ID": "T17", "point": "Virgin Mary", "feelings": "Glance", "sense": "Sight ", "class": "Monument", "picture": "1562262803579.jpg", "location-Latitude": 43.16325246, "location-Longitude": 13.36114802, "location-Altitude": 374.98315429690001, "location-Accuracy": 4.288 }, "geometry": { "type": "Point", "coordinates": [ 13.36114802, 43.16325246 ] } },
+  ]
+  };
+
+var tree = {
+"type": "FeatureCollection",
+"name": "sept-2019-VALLENZUOLO-briefcase",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "meta-instanceID": "uuid:7ae915a8-4490-4d1f-b12a-40a313090223", "ID": "Vitto e alloggio", "point": "Vineyards", "feelings": "Thirst", "sense": "Sight ", "class": "Tree", "picture": "1562262027538.jpg", "location-Latitude": 43.159501014600004, "location-Longitude": 13.363527429199999, "location-Altitude": 343.72985839839998, "location-Accuracy": 4.9 }, "geometry": { "type": "Point", "coordinates": [ 13.363527429199999, 43.159501014600004 ] } },
+{ "type": "Feature", "properties": { "meta-instanceID": "uuid:078f75f9-efac-48d6-af87-88d0c2567161", "ID": null, "point": "Knots", "feelings": null, "sense": "Sight ", "class": "Tree", "picture": "1562262348849.jpg", "location-Latitude": 43.16080955, "location-Longitude": 13.36185195, "location-Altitude": 370.62817382809999, "location-Accuracy": 4.288 }, "geometry": { "type": "Point", "coordinates": [ 13.36185195, 43.16080955 ] } },
+{ "type": "Feature", "properties": { "meta-instanceID": "uuid:2313250f-c84a-493f-9c38-e89b5067dd75", "ID": "ME31", "point": "Trees", "feelings": "Curiosity", "sense": "Sight \/ Smell \/ Touch", "class": "Tree", "picture": "1562261366182.jpg", "location-Latitude": 43.1633682071, "location-Longitude": 13.359914553299999, "location-Altitude": 419.87948608400001, "location-Accuracy": 4.9 }, "geometry": { "type": "Point", "coordinates": [ 13.359914553299999, 43.1633682071 ] } },
+{ "type": "Feature", "properties": { "meta-instanceID": null, "ID": "WH29", "point": "The smell all around", "feelings": "Childhood memories", "sense": "Smell", "class": "Tree", "picture": "null.jpg", "location-Latitude": 43.157962, "location-Longitude": 13.366598, "location-Altitude": null, "location-Accuracy": null }, "geometry": { "type": "Point", "coordinates": [ 13.366598, 43.157962 ] } },
+{ "type": "Feature", "properties": { "meta-instanceID": null, "ID": "IS36", "point": "Hazelnut tree", "feelings": "Happy", "sense": "Sight ", "class": "Tree", "picture": "null.jpg", "location-Latitude": 43.161746, "location-Longitude": 13.361997, "location-Altitude": null, "location-Accuracy": null }, "geometry": { "type": "Point", "coordinates": [ 13.361997, 43.161746 ] } },
+{ "type": "Feature", "properties": { "meta-instanceID": null, "ID": "BR28", "point": "Those weird, round, dry, white flowers", "feelings": "Amazement", "sense": "Sight ", "class": "Tree", "picture": "null.jpg", "location-Latitude": 43.163191, "location-Longitude": 13.358447, "location-Altitude": null, "location-Accuracy": null }, "geometry": { "type": "Point", "coordinates": [ 13.358447, 43.163191 ] } },
+{ "type": "Feature", "properties": { "meta-instanceID": null, "ID": "ME27", "point": "Vineyards", "feelings": null, "sense": "Sight ", "class": "Tree", "picture": "null.jpg", "location-Latitude": 43.159005, "location-Longitude": 13.365304, "location-Altitude": null, "location-Accuracy": null }, "geometry": { "type": "Point", "coordinates": [ 13.365304, 43.159005 ] } },
+]
+};
+
+var water = {
+"type": "FeatureCollection",
+"name": "sept-2019-VALLENZUOLO-briefcase",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "meta-instanceID": "uuid:849d75ce-87c2-45d9-89eb-7f91d0344018", "ID": "MR30", "point": "Spring", "feelings": "Memories", "sense": " Hearing \/ Touch", "class": "Water", "picture": "1562261099003.jpg", "location-Latitude": 43.163115193199999, "location-Longitude": 13.3610130197, "location-Altitude": 403.52965198250001, "location-Accuracy": 6.0 }, "geometry": { "type": "Point", "coordinates": [ 13.3610130197, 43.163115193199999 ] } },
+{ "type": "Feature", "properties": { "meta-instanceID": "uuid:53ac0663-434f-4121-a4a7-e1c9284f9f65", "ID": "DB26", "point": "Stream", "feelings": "Familiarity", "sense": "Sight \/ Smell", "class": "Water", "picture": "1562258939679.jpg", "location-Latitude": 43.15917062, "location-Longitude": 13.36488905, "location-Altitude": 312.87756347660002, "location-Accuracy": 4.288 }, "geometry": { "type": "Point", "coordinates": [ 13.36488905, 43.15917062 ] } },
+{ "type": "Feature", "properties": { "meta-instanceID": null, "ID": "BR28", "point": "Channel", "feelings": "Freshness", "sense": "Touch", "class": "Water", "picture": "null.jpg", "location-Latitude": 43.15915, "location-Longitude": 13.364517, "location-Altitude": null, "location-Accuracy": null }, "geometry": { "type": "Point", "coordinates": [ 13.364517, 43.15915 ] } },
+]
+};
+
+
+var monument = {
+"type": "FeatureCollection",
+"name": "sept-2019-VALLENZUOLO-briefcase",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+  { "type": "Feature", "properties": { "meta-instanceID": "uuid:6b40cb67-b661-43c7-8dbf-eac7faab6bd9", "ID": "MG4", "point": "Oven", "feelings": "Sadness", "sense": "Sight ", "class": "Anthropic", "picture": "1562259393277.jpg", "location-Latitude": 43.15929124, "location-Longitude": 13.3640827, "location-Altitude": 317.75701904300001, "location-Accuracy": 4.288 }, "geometry": { "type": "Point", "coordinates": [ 13.3640827, 43.15929124 ] } },
+  { "type": "Feature", "properties": { "meta-instanceID": "uuid:df9472f0-ebd3-4b4b-8dce-8b2fe7bd9db6", "ID": "T17", "point": "Geometry", "feelings": "Repetition", "sense": "Sight ", "class": "Anthropic", "picture": "1562262107860.jpg", "location-Latitude": 43.15976275, "location-Longitude": 13.3628114, "location-Altitude": 354.68823242190001, "location-Accuracy": 4.288 }, "geometry": { "type": "Point", "coordinates": [ 13.3628114, 43.15976275 ] } },
+  { "type": "Feature", "properties": { "meta-instanceID": "uuid:4dfe1ba0-d63c-468c-8f07-3d507a366ae0", "ID": "Vitto e alloggio", "point": "Forza Milan Juve merda", "feelings": "Surprise", "sense": "Sight ", "class": "Anthropic", "picture": "1562262222164.jpg", "location-Latitude": 43.160368657500001, "location-Longitude": 13.3621980541, "location-Altitude": 373.33016967769998, "location-Accuracy": 4.7 }, "geometry": { "type": "Point", "coordinates": [ 13.3621980541, 43.160368657500001 ] } },
+  { "type": "Feature", "properties": { "meta-instanceID": "uuid:5041e9e8-c7b3-41bb-80b4-9e24ca434526", "ID": "ME31", "point": "Noise", "feelings": "Out of context", "sense": "Hearing", "class": "Anthropic", "picture": "null.jpg", "location-Latitude": 43.1567600435, "location-Longitude": 13.366984568099999, "location-Altitude": 345.50415039059999, "location-Accuracy": 4.9 }, "geometry": { "type": "Point", "coordinates": [ 13.366984568099999, 43.1567600435 ] } },
+  { "type": "Feature", "properties": { "meta-instanceID": "uuid:19a4f3d5-acb3-487e-a892-2899f47c6c36", "ID": "Vitto e alloggio", "point": "House of the chef", "feelings": "Hunger", "sense": "Sight ", "class": "Anthropic", "picture": "null.jpg", "location-Latitude": 43.152836398200002, "location-Longitude": 13.3709456181, "location-Altitude": 419.96267700200002, "location-Accuracy": 4.9 }, "geometry": { "type": "Point", "coordinates": [ 13.3709456181, 43.152836398200002 ] } },
+  { "type": "Feature", "properties": { "meta-instanceID": null, "ID": "IM31", "point": "Barn dogs chickens", "feelings": "Happiness", "sense": "Sight ", "class": "Anthropic", "picture": "null.jpg", "location-Latitude": 43.159795, "location-Longitude": 13.362227, "location-Altitude": null, "location-Accuracy": null }, "geometry": { "type": "Point", "coordinates": [ 13.362227, 43.159795 ] } },
+  { "type": "Feature", "properties": { "meta-instanceID": null, "ID": "IM31", "point": "Wash house", "feelings": "Serenity", "sense": "Sight ", "class": "Anthropic", "picture": "null.jpg", "location-Latitude": 43.163119, "location-Longitude": 13.361073, "location-Altitude": null, "location-Accuracy": null }, "geometry": { "type": "Point", "coordinates": [ 13.361073, 43.163119 ] } },
+  { "type": "Feature", "properties": { "meta-instanceID": null, "ID": "IS36", "point": "Small building", "feelings": "Loneliness", "sense": "Sight ", "class": "Anthropic", "picture": "null.jpg", "location-Latitude": 43.152551, "location-Longitude": 13.364263, "location-Altitude": null, "location-Accuracy": null }, "geometry": { "type": "Point", "coordinates": [ 13.367984928025704, 43.155361018351243 ] } },
+  { "type": "Feature", "properties": { "meta-instanceID": null, "ID": "MO31", "point": "Detached houses, dogs and barns", "feelings": "Disoriented", "sense": "Sight \/ Hearing", "class": "Anthropic", "picture": "null.jpg", "location-Latitude": 43.160163, "location-Longitude": 13.362614, "location-Altitude": null, "location-Accuracy": null }, "geometry": { "type": "Point", "coordinates": [ 13.362614, 43.160163 ] } },
+  { "type": "Feature", "properties": { "meta-instanceID": null, "ID": "AB28", "point": "Cracks in the asphalt", "feelings": "Insecurity", "sense": "Sight \/ Touch", "class": "Anthropic", "picture": "null.jpg", "location-Latitude": 43.147482, "location-Longitude": 13.370508, "location-Altitude": null, "location-Accuracy": null }, "geometry": { "type": "Point", "coordinates": [ 13.370508, 43.147482 ] } },
+  { "type": "Feature", "properties": { "meta-instanceID": null, "ID": "AN37", "point": "Foghorn noise", "feelings": "Deja-vu", "sense": "Hearing", "class": "Anthropic", "picture": "null.jpg", "location-Latitude": 43.15676, "location-Longitude": 13.366984, "location-Altitude": null, "location-Accuracy": null }, "geometry": { "type": "Point", "coordinates": [ 13.366984, 43.15676 ] } },
+  { "type": "Feature", "properties": { "meta-instanceID": "uuid:85611a14-0ea1-422d-bd40-55af61ad18cf", "ID": "T17", "point": "Virgin Mary", "feelings": "Glance", "sense": "Sight ", "class": "Monument", "picture": "1562262803579.jpg", "location-Latitude": 43.16325246, "location-Longitude": 13.36114802, "location-Altitude": 374.98315429690001, "location-Accuracy": 4.288 }, "geometry": { "type": "Point", "coordinates": [ 13.36114802, 43.16325246 ] } },
+]
+};
+
+var attraction = {
+"type": "FeatureCollection",
+"name": "sept-2019-VALLENZUOLO-briefcase",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "meta-instanceID": "uuid:962cf997-04ff-4199-ba88-4fe5a7b40bcc", "ID": "Lr7", "point": "Ruins", "feelings": "Melancholy", "sense": "Sight ", "class": "Attraction", "picture": "1562260181247.jpg", "location-Latitude": 43.149383654799998, "location-Longitude": 13.370911767699999, "location-Altitude": 419.0, "location-Accuracy": 7.0 }, "geometry": { "type": "Point", "coordinates": [ 13.370911767699999, 43.149383654799998 ] } },
+{ "type": "Feature", "properties": { "meta-instanceID": "uuid:9c672921-d238-49e5-a5a4-e614e169baf8", "ID": "Vitto e alloggio", "point": "Chairoplane with pedals", "feelings": "Enthusiasm", "sense": "Sight \/ Hearing", "class": "Attraction", "picture": "1562265552682.jpg", "location-Latitude": 43.163430477, "location-Longitude": 13.356669822100001, "location-Altitude": 460.79104614260001, "location-Accuracy": 4.9 }, "geometry": { "type": "Point", "coordinates": [ 13.356669822100001, 43.163430477 ] } },
+{ "type": "Feature", "properties": { "meta-instanceID": "uuid:d0efd233-c0c0-4945-80be-da85d18826f8", "ID": "Vitto e alloggio", "point": "Laundry in nowhere", "feelings": "Terminalia", "sense": "Sight ", "class": "Attraction", "picture": "1562260912738.jpg", "location-Latitude": 43.154977022200001, "location-Longitude": 13.3681520812, "location-Altitude": 354.30315700080001, "location-Accuracy": 4.7 }, "geometry": { "type": "Point", "coordinates": [ 13.3681520812, 43.154977022200001 ] } },
+{ "type": "Feature", "properties": { "meta-instanceID": "uuid:d19354e2-fffa-4aac-912f-3b46bf101d6d", "ID": "ME31", "point": "Home that comes out from the wheat", "feelings": "Surprise", "sense": "Sight ", "class": "Attraction", "picture": "1562258187319.jpg", "location-Latitude": 43.146970765100001, "location-Longitude": 13.3700714136, "location-Altitude": 436.25598144529999, "location-Accuracy": 4.7 }, "geometry": { "type": "Point", "coordinates": [ 13.3700714136, 43.146970765100001 ] } },
+{ "type": "Feature", "properties": { "meta-instanceID": "uuid:d20bd91f-8089-4f6c-9884-d4c049127dc6", "ID": "MG4", "point": "Farmer's tools hanged on a gate", "feelings": "Nostalgia", "sense": "Sight ", "class": "Attraction", "picture": "null.jpg", "location-Latitude": 43.15276573, "location-Longitude": 13.37105535, "location-Altitude": 421.34112548830001, "location-Accuracy": 4.288 }, "geometry": { "type": "Point", "coordinates": [ 13.37105535, 43.15276573 ] } },
+{ "type": "Feature", "properties": { "meta-instanceID": "uuid:305e5f5d-94b9-44d6-828a-d10ea1bf3113", "ID": "DB26", "point": "Wash house", "feelings": "Freshness \/ Familiarity", "sense": "Sight \/ Hearing", "class": "Attraction", "picture": "1562260145549.jpg", "location-Latitude": 43.16315629, "location-Longitude": 13.36107476, "location-Altitude": 392.21398925779999, "location-Accuracy": 4.288 }, "geometry": { "type": "Point", "coordinates": [ 13.36107476, 43.16315629 ] } },
+{ "type": "Feature", "properties": { "meta-instanceID": null, "ID": "ME27", "point": "Ruins", "feelings": "Emotional", "sense": "Sight ", "class": "Attraction", "picture": "null.jpg", "location-Latitude": 43.156578, "location-Longitude": 13.367337, "location-Altitude": null, "location-Accuracy": null }, "geometry": { "type": "Point", "coordinates": [ 13.367337, 43.156578 ] } },
+{ "type": "Feature", "properties": { "meta-instanceID": null, "ID": "MO31", "point": "Wash house", "feelings": "Quiet", "sense": "Hearing \/ Sight \/ Smell \/ Taste \/ Touch", "class": "Attraction", "picture": "null.jpg", "location-Latitude": 43.163119, "location-Longitude": 13.361073, "location-Altitude": null, "location-Accuracy": null }, "geometry": { "type": "Point", "coordinates": [ 13.361073, 43.163119 ] } },
+]
+};
+
+var hill = {
+"type": "FeatureCollection",
+"name": "sept-2019-VALLENZUOLO-briefcase",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "meta-instanceID": "uuid:5a9a0027-83fc-451f-a16f-42ea774a3e86", "ID": "Lr7", "point": "Hills", "feelings": "Peacefulness", "sense": "Sight ", "class": "Hill", "picture": "1562260431517.jpg", "location-Latitude": 43.151977853799998, "location-Longitude": 13.371164482099999, "location-Altitude": 413.0, "location-Accuracy": 8.0 }, "geometry": { "type": "Point", "coordinates": [ 13.371164482099999, 43.151977853799998 ] } },
+{ "type": "Feature", "properties": { "meta-instanceID": "uuid:43cc39e5-dc58-48da-bd08-229c54bb369d", "ID": "Lr7", "point": "Hills", "feelings": "Peacefulness", "sense": "Sight ", "class": "Hill", "picture": "null.jpg", "location-Latitude": 43.1486833887, "location-Longitude": 13.370631057800001, "location-Altitude": 423.0, "location-Accuracy": 7.0 }, "geometry": { "type": "Point", "coordinates": [ 13.370631057800001, 43.1486833887 ] } },
+{ "type": "Feature", "properties": { "meta-instanceID": null, "ID": "BX32", "point": "Harvesting golden fields", "feelings": "Happiness, familiarity, peace, tranquility", "sense": "Sight ", "class": "Hill", "picture": "null.jpg", "location-Latitude": 43.15676, "location-Longitude": 13.3669845, "location-Altitude": null, "location-Accuracy": null }, "geometry": { "type": "Point", "coordinates": [ 13.3669845, 43.15676 ] } },
+{ "type": "Feature", "properties": { "meta-instanceID": null, "ID": "WH29", "point": "View smell light", "feelings": "Serenity peaceful joy", "sense": "Sight \/ Smell", "class": "Hill", "picture": "null.jpg", "location-Latitude": 43.154447, "location-Longitude": 13.368871, "location-Altitude": null, "location-Accuracy": null }, "geometry": { "type": "Point", "coordinates": [ 13.368871, 43.154447 ] } },
+{ "type": "Feature", "properties": { "meta-instanceID": null, "ID": "WH29", "point": "Look like a painting on the light with the blue sky and the yellow fields", "feelings": "Dreamy", "sense": "Sight ", "class": "Hill", "picture": "null.jpg", "location-Latitude": 43.155243, "location-Longitude": 13.3681, "location-Altitude": null, "location-Accuracy": null }, "geometry": { "type": "Point", "coordinates": [ 13.3681, 43.155243 ] } },
+{ "type": "Feature", "properties": { "meta-instanceID": null, "ID": "IM31", "point": "Green hill", "feelings": "Peacefulness", "sense": "Sight ", "class": "Hill", "picture": "null.jpg", "location-Latitude": 43.153941, "location-Longitude": 13.369231, "location-Altitude": null, "location-Accuracy": null }, "geometry": { "type": "Point", "coordinates": [ 13.369231, 43.153941 ] } },
+{ "type": "Feature", "properties": { "meta-instanceID": null, "ID": "AB28", "point": "Crossroads", "feelings": "Bright, calm, peaceful", "sense": "Sight \/ Hearing \/ Touch", "class": "Hill", "picture": "null.jpg", "location-Latitude": 43.154158, "location-Longitude": 13.369599, "location-Altitude": null, "location-Accuracy": null }, "geometry": { "type": "Point", "coordinates": [ 13.369599, 43.154158 ] } },
+{ "type": "Feature", "properties": { "meta-instanceID": null, "ID": "IT33", "point": "Contrast between yellow mowed fields and green hills", "feelings": "Melancholic, afflicted, surprised", "sense": "Sight \/ Hearing \/ Touch", "class": "Hill", "picture": "null.jpg", "location-Latitude": 43.154529, "location-Longitude": 13.368872, "location-Altitude": null, "location-Accuracy": null }, "geometry": { "type": "Point", "coordinates": [ 13.368872, 43.154529 ] } },
+]
+};
+
+var terminalia = {
+  "type": "FeatureCollection",
+  "name": "sept-2019-VALLENZUOLO-briefcase",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [{
+    "type": "Feature",
+    "properties": {
+      "description": "Description",
+      "picture": "terminalia.jpg",
+      "location-Latitude": 43.15474996,
+      "location-Longitude": 13.368123286
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [13.368123286, 43.15474996]
+    }
+  }, ]
+};
+
+      ///////MARKERS//////
+
+      color.features.forEach(function(marker) {
+
+        var el = document.createElement('div');
+        el.className = 'marker-color';
+
+        new mapboxgl.Marker(el)
+          .setLngLat(marker.geometry.coordinates)
+          .addTo(map);
+      });
+
+      anthropic.features.forEach(function(marker) {
+
+        var el = document.createElement('div');
+        el.className = 'marker-monument';
+
+        new mapboxgl.Marker(el)
+          .setLngLat(marker.geometry.coordinates)
+          .addTo(map);
+      });
+
+      tree.features.forEach(function(marker) {
+
+        var el = document.createElement('div');
+        el.className = 'marker-tree';
+
+        new mapboxgl.Marker(el)
+          .setLngLat(marker.geometry.coordinates)
+          .addTo(map);
+      });
+
+      water.features.forEach(function(marker) {
+
+        var el = document.createElement('div');
+        el.className = 'marker-water';
+
+        new mapboxgl.Marker(el)
+          .setLngLat(marker.geometry.coordinates)
+          .addTo(map);
+      });
+
+      monument.features.forEach(function(marker) {
+
+        var el = document.createElement('div');
+        el.className = 'marker-anthropic';
+
+        new mapboxgl.Marker(el)
+          .setLngLat(marker.geometry.coordinates)
+          .addTo(map);
+      });
+
+      attraction.features.forEach(function(marker) {
+
+        var el = document.createElement('div');
+        el.className = 'marker-attraction';
+
+        new mapboxgl.Marker(el)
+          .setLngLat(marker.geometry.coordinates)
+          .addTo(map);
+      });
+
+      hill.features.forEach(function(marker) {
+
+        var el = document.createElement('div');
+        el.className = 'marker-hill';
+
+        new mapboxgl.Marker(el)
+          .setLngLat(marker.geometry.coordinates)
+          .addTo(map);
+      });
+
+      terminalia.features.forEach(function(marker) {
+
+        var el = document.createElement('div');
+        el.className = 'marker-terminalia';
+
+        new mapboxgl.Marker(el)
+          .setLngLat(marker.geometry.coordinates)
+          .addTo(map);
+      });
+
+
+
+      ///////POPUP//////
+
+      map.on('click', function(e) {
+        var features2 = map.queryRenderedFeatures(e.point, {
+          layers: ['elementi-paesaggio','terminalia']
+        });
+
+        // if the features have no info, return nothing
+        if (!features2.length) {
+          return;
+        }
+
+        var feature = features2[0];
+
+        // Populate the popup and set its coordinates
+        // based on the feature found
+        var popup = new mapboxgl.Popup()
+          .setLngLat(feature.geometry.coordinates)
+          .setHTML('<div id="popup" class="popup" style="z-index: 10;">' +
+            '<ul class="list-group">' +
+            '<img class="box-image" src="./media/' + feature.properties['picture'] + '">' +
+            '<li class="list-group-item" style="margin-top:10px;"> <b> Name </br> </b>' + feature.properties['point'] + " </li>" +
+            '<li class="list-group-item"> <b> Feelings </br> </b>' + feature.properties['feelings'] + " </li>" +
+            '<li class="list-group-item"> <b> Sense involved </br> </b>' + feature.properties['sense'] + " </li>" +
+            //'<table border="1" style="margin-top:10px;"> <tr> <td class="line-color">' + feature.properties['class'] + '</td> </tr> </table>' +
+            '</ul> </div>'
+          )
+          .addTo(map);
+
+/*
+        var popupterminalia = new mapboxgl.Popup()
+        .setLngLat(feature.geometry.coordinates)
+        .setHTML('<div id="popup" class="popup" style="z-index: 10;">' +
+          '<ul class="list-group">' +
+          '<img class="box-image" src="./media/' + feature.properties['picture'] + '">' +
+          '</ul> </div>'
+        )
+        .addTo(map);
+*/
+
+
+        var cell = $('td');
+
+        $(document).ready(function() {
+          cell.each(function() {
+            var cell_value = !$(this).text();
+            if (cell_value = 'Color') {
+              $(this).css({
+                'background': '#511050'
+              });
+            } else if (cell_value = 'Tree') {
+              $(this).css({
+                'background': '#51d150'
+              });
+            } else if (cell_value = 'Water') {
+              $(this).css({
+                'background': '#3bb2d0'
+              });
+            } else if (cell_value = 'Anthropic') {
+              $(this).css({
+                'background': '#696840'
+              });
+            } else if (cell_value = 'Attraction') {
+              $(this).css({
+                'background': '#e55e5e'
+              });
+            } else if (cell_value = 'Hill') {
+              $(this).css({
+                'background': '#fbb03b'
+              });
+            };
+          });
+        });
+
+      });
+
+    });
+  </script>
+
+
+</body>
+
+</html>
